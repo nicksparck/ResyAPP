@@ -24,8 +24,5 @@ public class ControladorUsuarioRest {
         return serUsuario.listarTodos();
     }
 
-    @PostMapping(value = "/crear")
-    public UsuarioDto crear(@RequestBody UsuarioDto usuario) {
-        return serUsuario.crear(usuario);
-    }
+
 }
