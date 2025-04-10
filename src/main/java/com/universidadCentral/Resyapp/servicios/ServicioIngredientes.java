@@ -19,4 +19,30 @@ public class ServicioIngredientes {
     public List<Ingredientes> listar(){
         return repoIngredientes.findAll();
     }
+
+    // DESCONTAR INGREDIENTE
+    public void descontarCantidad(Long idIngrediente, int cantidadDescontar){
+        Ingredientes ingrediente = repoIngredientes.findById(idIngrediente).orElseThrow(null);
+
+        int nuevaCantidad = ingrediente.getCantidad() - cantidadDescontar;
+        if(nuevaCantidad < 0){
+            System.out.println("No hay suficiente Cantidad en el Inventario");
+        }
+        ingrediente.setCantidad(nuevaCantidad);
+        repoIngredientes.save(ingrediente);
+    }
+
+    // AGREGAR INGREDIENTE
+    public void agregarCantidad(Long idIngrediente, int cantidad){
+        Ingredientes ingrediente = repoIngredientes.findById(idIngrediente).orElseThrow(null);
+
+        if(cantidad > 0){
+            int nuevaCantidad = ingrediente.getCantidad() + cantidad;
+            ingrediente.setCantidad(nuevaCantidad);
+            repoIngredientes.save(ingrediente);
+        }else{
+            System.out.println("No podemos ingresar 0 Unidades ");
+        }
+
+    }
 }
