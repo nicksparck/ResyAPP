@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 @RestController
@@ -38,5 +39,13 @@ public class ControladorIngredientesRest {
         serIngredientes.agregarCantidad(id, cantidad);
         return ResponseEntity.ok("Cantidad Actualizada Correctamente");
     }
+
+    // ELIMINAR ELEMENTO DEL INVENTARIO
+    @DeleteMapping("eliminar/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable long id){
+        serIngredientes.eliminarIngrediente(id);
+        return ResponseEntity.ok("Eliminacion Ingrediente Correctamente");
+    }
+
 
 }

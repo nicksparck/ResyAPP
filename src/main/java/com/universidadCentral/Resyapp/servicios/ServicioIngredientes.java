@@ -43,6 +43,14 @@ public class ServicioIngredientes {
         }else{
             System.out.println("No podemos ingresar 0 Unidades ");
         }
+    }
 
+    // ELIMINAR INGREDIENTE DEL INVENTARIO
+    public void eliminarIngrediente(Long id){
+        if(!repoIngredientes.existsById(id)){
+            System.out.println("Ingrediente por id no encontrado");
+
+        }
+        repoIngredientes.deleteById(id);
     }
 }
