@@ -22,4 +22,5 @@ public class ControladorUsuarioRest {
     public List<Usuario> listar(){
         return serUsuario.listarTodos();
     }
+
 }
