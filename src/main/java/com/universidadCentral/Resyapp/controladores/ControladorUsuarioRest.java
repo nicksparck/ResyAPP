@@ -1,5 +1,6 @@
 package com.universidadCentral.Resyapp.controladores;
 
+import com.universidadCentral.Resyapp.dto.UsuarioDto;
 import com.universidadCentral.Resyapp.persistencia.entidades.Usuario;
 import com.universidadCentral.Resyapp.servicios.ServicioUsuario;
 import lombok.AllArgsConstructor;
@@ -22,5 +23,6 @@ public class ControladorUsuarioRest {
     public List<Usuario> listar(){
         return serUsuario.listarTodos();
     }
+
 
 }
