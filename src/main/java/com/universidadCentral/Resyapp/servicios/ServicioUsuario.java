@@ -20,5 +20,11 @@ public class ServicioUsuario {
     public List<Usuario> listarTodos(){
         return repoUsuario.findAll();
     }
-
+    // ELIMINAR UN USUARIO POR ID
+    public void eliminar(Long id){
+        if(!repoUsuario.existsById(id)){
+            System.out.println("Usuario por id no encontrado");
+        }
+        repoUsuario.deleteById(id);
+    }
 }
