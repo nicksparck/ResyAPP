@@ -20,5 +20,24 @@ public class ServicioUsuario {
     public List<Usuario> listarTodos(){
         return repoUsuario.findAll();
     }
-
+    public UsuarioDto crear(UsuarioDto usuarioDto){
+        Rol rol = Rol.builder()
+                .tipo_rol(usuarioDto.rol().getTipo_rol())
+                .build();
+        Usuario usuario = Usuario.builder()
+                .nombre(usuarioDto.nombre())
+                .apellido(usuarioDto.apellido())
+                .nombreUsuario(usuarioDto.nombreUsuario())
+                .rol(rol)
+                .build();
+        if(repoUsuario.save(usuario).getId() > 0){
+            return usuarioDto;
+        }else return null;
+    }
+    public Usuario obtenerXNombre(String nombre){
+        return repoUsuario.findByNombre(nombre);
+    }
+    public Usuario obtenerXPk(Long pk){
+        return repoUsuario.findById(pk).orElseThrow(null);
+    }
 }
