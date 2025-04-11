@@ -19,6 +19,20 @@ public class ServicioUsuario {
     public List<Usuario> listarTodos(){
         return repoUsuario.findAll();
     }
+    //MODIFICAR USUARIO POR ID
+    public void modificar(Long id, Usuario usuarioActual){
+        Usuario usuarioExistente = repoUsuario.findById(id).orElseThrow(null);
+
+        //MODIFICAR USUARIO
+        usuarioExistente.setNombre(usuarioActual.getNombre());
+        usuarioExistente.setApellido(usuarioActual.getApellido());
+        usuarioExistente.setCedula(usuarioActual.getCedula());
+        usuarioExistente.setNombreUsuario(usuarioActual.getNombreUsuario());
+        usuarioExistente.setRol(usuarioActual.getRol());
+        usuarioExistente.setContrasena(usuarioActual.getContrasena());
+        repoUsuario.save(usuarioExistente);
+
+    }
     // ELIMINAR UN USUARIO POR ID
     public void eliminar(Long id){
         if(!repoUsuario.existsById(id)){
