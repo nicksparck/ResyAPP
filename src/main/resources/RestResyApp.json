@@ -1,0 +1,403 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "74f1172f-7bc4-4825-9599-ab677298ec18",
+        "name": "inventario"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+              "name": "DELETE"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/ingredientes/eliminar/1"
+            },
+            "id": "1f33a99a-38f3-4114-9962-40b1674a2970",
+            "name": "DeleteIngredientes",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": ""
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/ingredientes/"
+            },
+            "id": "388f7a17-c954-409f-8bc9-c131418d3fd3",
+            "name": "getIngredientes",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"nombre\": \"papa Fritas\",\n  \"cantidad\": 20\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/ingredientes/"
+            },
+            "id": "bfc8144d-727f-497f-81eb-7aba64aeaad1",
+            "name": "postIngredientes",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+              "name": "PUT"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "cantidad",
+                    "value": "1"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/ingredientes/agregar/1/aumentar"
+            },
+            "id": "579cf9e8-2730-4b57-a902-3ee8e4643470",
+            "name": "putAgregarIngrediente",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+              "name": "PUT"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "cantidad",
+                    "value": "1"
+                  }
+                ]
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/ingredientes/1/descontar"
+            },
+            "id": "316296e0-14a5-446b-a835-2940eb7c7d21",
+            "name": "putDecrementacionIngredientes",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity": {
+        "type": "Project",
+        "id": "1d085659-0b2f-4e08-b3fd-76df566bf22b",
+        "name": "usuario"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+              "name": "DELETE"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/rest/eliminar/1"
+            },
+            "id": "4e7f859c-2688-479c-8eb0-f22805e1a9a3",
+            "name": "DeleteUsuario",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+              "name": "PUT"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"nombre\": \"juan manuelito\",\n  \"apellido\": \"bolivar\",\n  \"cedula\": \"1234\",\n  \"nombreUsuario\": \"juanBolivar\",\n  \"rol\": \"mesero\",\n  \"contrasena\": \"1234\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/rest/usuario/1/actualizar"
+            },
+            "id": "6c59c4ae-514e-417e-a6f4-f8d62bee9e18",
+            "name": "PutUsuario",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": ""
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/rest/"
+            },
+            "id": "983e0965-381c-479b-91d1-7649ba5ea9ab",
+            "name": "getUsuario",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"nombre\": \"juan\",\n  \"apellido\": \"bolivar\",\n  \"cedula\": \"1234\",\n  \"nombreUsuario\": \"juanBolivar\",\n  \"rol\": \"MESERO\",\n  \"contrasena\": \"1234\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/rest/"
+            },
+            "id": "34967cc5-599d-411d-9249-16994eeba0e6",
+            "name": "postUsuario",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"nombre\":\"rest\",\n  \"apellido\": \"requestBody\",\n  \"cedula\": \"100228306\",\n  \"nombreUsuario\": \"Rest_Body\",\n  \"contrasena\": \"RestBody123\",\n  \"rol\":{\n    \"tipo_rol\": \"Adm\"\n  }\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8863",
+              "path": "/rest/crear"
+            },
+            "id": "2de39f0b-8b5e-46df-9add-a9413fb99ded",
+            "name": "postusuarioDto",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
