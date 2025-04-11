@@ -1,7 +1,5 @@
 package com.universidadCentral.Resyapp.servicios;
 
-import com.universidadCentral.Resyapp.dto.UsuarioDto;
-import com.universidadCentral.Resyapp.persistencia.entidades.Rol;
 import com.universidadCentral.Resyapp.persistencia.entidades.Usuario;
 import com.universidadCentral.Resyapp.persistencia.repositorio.RepositorioUsuario;
 import lombok.AllArgsConstructor;

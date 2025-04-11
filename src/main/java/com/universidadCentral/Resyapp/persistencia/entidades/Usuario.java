@@ -25,8 +25,6 @@ public class Usuario {
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
 
-    @OneToOne(cascade = CascadeType.ALL) // RELACION 1 A 1
-    @JoinColumn(name= "rol_id") // LLAVE FORANEA referencedColumnName = "id"
-    private Rol rol;
+    private String rol;
 
 }
