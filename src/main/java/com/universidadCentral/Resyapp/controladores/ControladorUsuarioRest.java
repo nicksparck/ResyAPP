@@ -4,6 +4,8 @@ import com.universidadCentral.Resyapp.dto.UsuarioDto;
 import com.universidadCentral.Resyapp.persistencia.entidades.Usuario;
 import com.universidadCentral.Resyapp.servicios.ServicioUsuario;
 import lombok.AllArgsConstructor;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +25,7 @@ public class ControladorUsuarioRest {
     public List<Usuario> listar(){
         return serUsuario.listarTodos();
     }
+
 
 
 }
