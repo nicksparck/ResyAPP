@@ -26,6 +26,11 @@ public class ControladorUsuarioRest {
         return serUsuario.listarTodos();
     }
 
+    @PutMapping("usuario/{id}/actualizar")
+    public ResponseEntity<String> moficiar(@PathVariable Long id, @RequestBody Usuario usuario){
+        serUsuario.modificar(id, usuario);
+        return ResponseEntity.ok("Se ha modificado el Usuairo Correctamente");
+    }
 
 
 }
