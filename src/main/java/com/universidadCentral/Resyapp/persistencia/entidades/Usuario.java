@@ -1,16 +1,14 @@
 package com.universidadCentral.Resyapp.persistencia.entidades;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "Usuarios")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Builder
 @Setter
 public class Usuario {
     @Id
@@ -24,9 +22,11 @@ public class Usuario {
     private String cedula;
     @Column(name = "nombre_usuario ",nullable = false)
     private String nombreUsuario;
-    @Column(name = "Rol", nullable = false)
-    private String rol;
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
+
+    @OneToOne(cascade = CascadeType.ALL) // RELACION 1 A 1
+    @JoinColumn(name= "rol_id") // LLAVE FORANEA referencedColumnName = "id"
+    private Rol rol;
 
 }

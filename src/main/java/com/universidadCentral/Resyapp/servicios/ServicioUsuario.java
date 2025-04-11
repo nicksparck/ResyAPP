@@ -1,5 +1,7 @@
 package com.universidadCentral.Resyapp.servicios;
 
+import com.universidadCentral.Resyapp.dto.UsuarioDto;
+import com.universidadCentral.Resyapp.persistencia.entidades.Rol;
 import com.universidadCentral.Resyapp.persistencia.entidades.Usuario;
 import com.universidadCentral.Resyapp.persistencia.repositorio.RepositorioUsuario;
 import lombok.AllArgsConstructor;
@@ -17,13 +19,6 @@ public class ServicioUsuario {
     }
     public List<Usuario> listarTodos(){
         return repoUsuario.findAll();
-    }
-    // ELIMINAR USUARIO
-    public void eliminar(Long id){
-        if(!repoUsuario.existsById(id)){
-            System.out.println("El usuario con id, no fue encontrado");
-        }
-        repoUsuario.deleteById(id);
     }
 
 }
