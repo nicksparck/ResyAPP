@@ -30,8 +30,10 @@ public class ControladorIngredientesRest {
     // DESCONTAR INGREDIENTE
     @PutMapping("/{id}/descontar")
     public ResponseEntity<String> descontarIngrediente(@PathVariable Long id, @RequestParam int cantidad){
-        serIngredientes.descontarCantidad(id, cantidad);
-        return ResponseEntity.ok("Cantidad descontada correctamente");
+        int totalIngrediente= serIngredientes.descontarCantidad(id, cantidad);
+        if(totalIngrediente <= 5){
+            return ResponseEntity.ok("⚠\uFE0F Actualice su inventario tienes pocos ingredientes");
+        } return ResponseEntity.ok("Cantidad descontada correctamente " + totalIngrediente);
     }
     // AUMENTAR CANTIDAD INGREDIENTE
     @PutMapping("/agregar/{id}/aumentar")

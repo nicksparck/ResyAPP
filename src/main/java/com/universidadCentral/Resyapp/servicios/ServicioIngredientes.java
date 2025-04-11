@@ -21,7 +21,7 @@ public class ServicioIngredientes {
     }
 
     // DESCONTAR INGREDIENTE
-    public void descontarCantidad(Long idIngrediente, int cantidadDescontar){
+    public int descontarCantidad(Long idIngrediente, int cantidadDescontar){
         Ingredientes ingrediente = repoIngredientes.findById(idIngrediente).orElseThrow(null);
 
         int nuevaCantidad = ingrediente.getCantidad() - cantidadDescontar;
@@ -30,6 +30,8 @@ public class ServicioIngredientes {
         }
         ingrediente.setCantidad(nuevaCantidad);
         repoIngredientes.save(ingrediente);
+        // RETORNA CANTIDAD DESCONTADA
+        return nuevaCantidad;
     }
 
     // AGREGAR INGREDIENTE
