@@ -24,6 +24,6 @@ public class Usuario {
     private String nombreUsuario;
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
-    private String rol;
+    private Roles rol;
 
 }
