@@ -18,4 +18,12 @@ public class ServicioUsuario {
     public List<Usuario> listarTodos(){
         return repoUsuario.findAll();
     }
+    // ELIMINAR USUARIO
+    public void eliminar(Long id){
+        if(!repoUsuario.existsById(id)){
+            System.out.println("El usuario con id, no fue encontrado");
+        }
+        repoUsuario.deleteById(id);
+    }
+
 }

@@ -3,6 +3,8 @@ package com.universidadCentral.Resyapp.controladores;
 import com.universidadCentral.Resyapp.persistencia.entidades.Usuario;
 import com.universidadCentral.Resyapp.servicios.ServicioUsuario;
 import lombok.AllArgsConstructor;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,5 +24,14 @@ public class ControladorUsuarioRest {
     public List<Usuario> listar(){
         return serUsuario.listarTodos();
     }
+
+    // ELIMINAR USUARIO
+    @DeleteMapping("eliminar/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Long id ){
+        serUsuario.eliminar(id);
+        return ResponseEntity.ok("Eliminacion de Usuario Correcta");
+    }
+
+
 
 }
