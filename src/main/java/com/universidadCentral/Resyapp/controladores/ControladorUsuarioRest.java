@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/rest")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")//ACEPTAR SOLICITUDES HTTP, PARA USAR FLUTTER
 public class ControladorUsuarioRest {
     ServicioUsuario serUsuario;
 
