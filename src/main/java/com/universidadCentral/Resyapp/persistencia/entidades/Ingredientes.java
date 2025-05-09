@@ -17,6 +17,7 @@ public class Ingredientes {
     private Long id;
     private String nombre;
     private int cantidad;
+    private boolean esAlimenticio;
     // CREAR RELACION CON PROVEDORES
 
 }

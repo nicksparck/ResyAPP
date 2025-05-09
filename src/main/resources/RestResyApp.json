@@ -95,7 +95,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"nombre\": \"papa Fritas\",\n  \"cantidad\": 20\n}"
+                  "textBody": "{\n  \"nombre\": \"papa Fritas\",\n  \"cantidad\": 20,\n  \"esAlimenticio\": true\n}"
                 },
                 "uri": {
                   "query": {
@@ -621,7 +621,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"nombre\": \"papa Fritas\",\n  \"cantidad\": 20\n}"
+                  "textBody": "{\n  \"nombre\": \"papa Fritas\",\n  \"cantidad\": 20,\n  \"esAlimenticio\": true\n}"
                 },
                 "uri": {
                   "query": {
