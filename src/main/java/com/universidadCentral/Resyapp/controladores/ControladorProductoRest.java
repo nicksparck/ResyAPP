@@ -32,8 +32,12 @@ public class ControladorProductoRest {
 
     @DeleteMapping("/eliminarProducto/{id}")
     public ResponseEntity<String> eliminarProducto(@PathVariable long id){
-        serProducto.eliminar(id);
-        return ResponseEntity.ok("Producto Eliminado con Exito");
+        try{
+            serProducto.eliminar(id);
+            return ResponseEntity.ok("Producto Eliminado con Exito");
+        } catch(RuntimeException e){
+            return ResponseEntity.ok("Producto no Encontrado");
+        }
     }
 
 
