@@ -35,4 +35,12 @@ public class ServicioProducto {
     public List<Producto> listar(){
         return repoProducto.findAll();
     }
+
+    // ELIMINAR PRODUCTO POR ID
+    public void eliminar(Long id){
+        if(!repoProducto.existsById(id)){
+            System.out.println("Producto no Encontrado por Id");
+        }
+        repoProducto.deleteById(id);
+    }
 }

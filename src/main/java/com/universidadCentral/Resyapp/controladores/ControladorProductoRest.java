@@ -26,5 +26,11 @@ public class ControladorProductoRest {
          return ResponseEntity.ok("Producto Agregado");
     }
 
+    @DeleteMapping("/eliminarProducto/{id}")
+    public ResponseEntity<String> eliminarProducto(@PathVariable long id){
+        serProducto.eliminar(id);
+        return ResponseEntity.ok("Producto Eliminado con Exito");
+    }
+
 
 }
