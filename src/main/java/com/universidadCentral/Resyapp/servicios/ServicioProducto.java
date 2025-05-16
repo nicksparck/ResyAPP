@@ -37,10 +37,14 @@ public class ServicioProducto {
     }
 
     // ELIMINAR PRODUCTO POR ID
-    public void eliminar(Long id){
+    public Boolean eliminar(Long id){
         if(!repoProducto.existsById(id)){
             System.out.println("Producto no Encontrado por Id");
+            return false;
+        }else{
+            repoProducto.deleteById(id);
+            return true;
         }
-        repoProducto.deleteById(id);
+
     }
 }
