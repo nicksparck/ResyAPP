@@ -13,11 +13,14 @@ import java.util.List;
 @Setter
 @Getter
 @Table(name ="productos")
+
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long producto_id;
 
+    private String nombre;
+    private String descripcion;
     // RELACION ENTRE PRODUCTOS Y INGREDIENTES
     @ManyToMany
     @JoinTable(
