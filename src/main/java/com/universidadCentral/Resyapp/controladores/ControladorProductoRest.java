@@ -22,8 +22,12 @@ public class ControladorProductoRest {
 
     @PostMapping("/")
     public ResponseEntity<String> crear(@RequestBody ProductoDto productoDto){
-         serProducto.guardarDto(productoDto);
-         return ResponseEntity.ok("Producto Agregado");
+        try {
+            serProducto.guardarDto(productoDto);
+            return ResponseEntity.ok("Producto Agregado");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
+        }
     }
 
     @DeleteMapping("/eliminarProducto/{id}")
