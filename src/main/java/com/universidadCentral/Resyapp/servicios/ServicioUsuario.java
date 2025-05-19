@@ -20,6 +20,7 @@ public class ServicioUsuario {
         return repoUsuario.findAll();
     }
     //MODIFICAR USUARIO POR ID
+
     public void modificar(Long id, Usuario usuarioActual){
         Usuario usuarioExistente = repoUsuario.findById(id).orElseThrow(null);
 

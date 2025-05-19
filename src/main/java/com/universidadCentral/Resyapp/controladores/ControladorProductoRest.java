@@ -38,8 +38,16 @@ public class ControladorProductoRest {
          } else{
              return ResponseEntity.badRequest().body("Producto no Encontrado por Id");
          }
+    }
 
-
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<String> modificar(@PathVariable Long id, @RequestBody ProductoDto dto){
+        try{
+            serProducto.modificar(id, dto);
+            return ResponseEntity.ok("Producto Modificado con Exito");
+        } catch(Exception e){
+            return ResponseEntity.badRequest().body("Error al Modificar el Producto");
+        }
     }
 
 

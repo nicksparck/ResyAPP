@@ -27,13 +27,29 @@ public class ServicioProducto {
         Producto producto = Producto.builder()
                 .nombre(dto.getNombre())
                 .descripcion(dto.getDescripcion())
+                .imagen(dto.getImagen())
                 .ingredientes(ingredientes)
                 .build();
         return repoProducto.save(producto);
     }
-
+    // OPTENER INGREDIENTES
+    public List<Ingredientes> optenerIngredientes(Long id, ProductoDto dto){
+        List<Ingredientes> ingredientes = repoIngredientes.findAllById(dto.getIngredientesIds());
+        return ingredientes;
+    }
     public List<Producto> listar(){
         return repoProducto.findAll();
+    }
+
+    // MODIFICAR PRODUCTO POR ID
+    public void modificar(long id, ProductoDto dto){
+        Producto productoExistente = repoProducto.findById(id).orElseThrow();
+        productoExistente.setNombre(dto.getNombre());
+        productoExistente.setDescripcion(dto.getDescripcion());
+        productoExistente.setIngredientes(optenerIngredientes(id, dto));
+        productoExistente.setImagen(dto.getImagen());
+        //GUARDAR LOS CAMBIOS
+        repoProducto.save(productoExistente);
     }
 
     // ELIMINAR PRODUCTO POR ID

@@ -11,6 +11,159 @@
         {
           "entity": {
             "type": "Service",
+            "id": "cbcd5497-ad61-43f1-8be3-ed3b984828b8",
+            "name": "Producto"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/productos/eliminarProducto/1"
+                },
+                "id": "34777259-e777-45c6-9683-99ac746fc75f",
+                "name": "DeleteProducto",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/productos/"
+                },
+                "id": "cbcae121-4e54-4218-b243-6ff6355ffbd0",
+                "name": "GetProducto",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/productos/"
+                },
+                "id": "ece00341-6254-4366-ab5d-a1e42e750fee",
+                "name": "PostProducto",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                  "name": "PUT"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion Modificada\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/productos/actualizar/1"
+                },
+                "id": "779be090-b6d8-4307-a43e-613f3459897b",
+                "name": "PutProducto",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
             "id": "f0a0c78b-da5b-4fd7-9cb8-357152ec5697",
             "name": "inventario"
           },
@@ -375,6 +528,163 @@
         "name": "Render"
       },
       "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "7467ee93-9684-4cfa-ae64-3fc85afc452e",
+            "name": "Producto"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/productos/eliminarProducto/1"
+                },
+                "id": "63f5e945-bd95-4ab8-a8d8-501fd49d1478",
+                "name": "DeleteProducto",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/productos/"
+                },
+                "id": "a0463a55-8da3-4c1c-848a-2d965d04755f",
+                "name": "GetProducto",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/productos/"
+                },
+                "id": "18fdb4ba-c3fa-4011-9a56-64e661d7647a",
+                "name": "PostProducto",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                  "name": "PUT"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion Modificada\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/productos/actualizar/1"
+                },
+                "id": "823dfd2e-2861-4ad8-96d5-f93b56f00e3c",
+                "name": "PutProducto",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        },
         {
           "entity": {
             "type": "Service",
