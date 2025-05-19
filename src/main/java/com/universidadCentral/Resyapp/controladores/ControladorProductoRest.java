@@ -22,14 +22,32 @@ public class ControladorProductoRest {
 
     @PostMapping("/")
     public ResponseEntity<String> crear(@RequestBody ProductoDto productoDto){
-         serProducto.guardarDto(productoDto);
-         return ResponseEntity.ok("Producto Agregado");
+        try {
+            serProducto.guardarDto(productoDto);
+            return ResponseEntity.ok("Producto Agregado");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
+        }
     }
 
     @DeleteMapping("/eliminarProducto/{id}")
     public ResponseEntity<String> eliminarProducto(@PathVariable long id){
-        serProducto.eliminar(id);
-        return ResponseEntity.ok("Producto Eliminado con Exito");
+         Boolean idEncontrado = serProducto.eliminar(id);
+         if(idEncontrado){
+             return ResponseEntity.ok("Producto Eliminado con Exito");
+         } else{
+             return ResponseEntity.badRequest().body("Producto no Encontrado por Id");
+         }
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<String> modificar(@PathVariable Long id, @RequestBody ProductoDto dto){
+        try{
+            serProducto.modificar(id, dto);
+            return ResponseEntity.ok("Producto Modificado con Exito");
+        } catch(Exception e){
+            return ResponseEntity.badRequest().body("Error al Modificar el Producto");
+        }
     }
 
 
