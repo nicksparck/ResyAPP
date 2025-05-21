@@ -27,6 +27,7 @@ public class ServicioProducto {
         Producto producto = Producto.builder()
                 .nombre(dto.getNombre())
                 .descripcion(dto.getDescripcion())
+                .precio(dto.getPrecio())
                 .imagen(dto.getImagen())
                 .ingredientes(ingredientes)
                 .build();
@@ -46,6 +47,7 @@ public class ServicioProducto {
         Producto productoExistente = repoProducto.findById(id).orElseThrow();
         productoExistente.setNombre(dto.getNombre());
         productoExistente.setDescripcion(dto.getDescripcion());
+        productoExistente.setPrecio(dto.getPrecio());
         productoExistente.setIngredientes(optenerIngredientes(id, dto));
         productoExistente.setImagen(dto.getImagen());
         //GUARDAR LOS CAMBIOS

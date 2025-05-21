@@ -9,6 +9,7 @@ import java.util.List;
 public class ProductoDto {
     private String nombre;
     private String descripcion;
+    private Float precio;
     private String imagen;
     private List<Long> ingredientesIds;
 }

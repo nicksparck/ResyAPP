@@ -21,6 +21,8 @@ public class Producto {
 
     private String nombre;
     private String descripcion;
+    @Column(name= "precio")
+    private float precio;
     @Column(name = "imagen")
     private String imagen;
     // RELACION ENTRE PRODUCTOS Y INGREDIENTES

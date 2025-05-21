@@ -94,7 +94,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"precio\": 12.0,\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
                 },
                 "uri": {
                   "query": {
@@ -616,7 +616,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"precio\": 12.0,\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
                 },
                 "uri": {
                   "query": {
