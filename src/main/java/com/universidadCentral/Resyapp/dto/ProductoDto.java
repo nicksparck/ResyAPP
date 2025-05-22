@@ -7,6 +7,7 @@ import java.util.List;
 
 @Data
 public class ProductoDto {
+    private Long producto_id;
     private String nombre;
     private String descripcion;
     private Float precio;
