@@ -21,6 +21,7 @@ public class ControladorUsuarioRest {
         System.out.println("Este es el usuario:\n" + usuario);
         return serUsuario.guardar(usuario);
     }
+
     @GetMapping("/")
     public List<Usuario> listar(){
         return serUsuario.listarTodos();
