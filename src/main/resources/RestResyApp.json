@@ -409,6 +409,46 @@
                 "type": "Request",
                 "method": {
                   "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombreUsuario\": \"UserAdmin\",\n  \"contrasena\": \"Admin123\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/autentificar/validar"
+                },
+                "id": "4061c1e5-4415-4d63-aa38-c31cf1e607a5",
+                "name": "PostAutentificar",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
                   "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
                   "name": "PUT"
                 },
@@ -657,7 +697,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion Modificada\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion Modificada\",\n  \"imagen\": \"jsssjjj\",\n  \"precio\": 22.3,\n  \"ingredientesIds\": [1, 2]\n}"
                 },
                 "uri": {
                   "query": {
