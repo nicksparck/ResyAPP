@@ -1,6 +1,7 @@
 package com.universidadCentral.Resyapp.servicios;
 
 
+import com.universidadCentral.Resyapp.dto.UsuarioCredencialDto;
 import com.universidadCentral.Resyapp.persistencia.entidades.Usuario;
 import com.universidadCentral.Resyapp.persistencia.repositorio.RepositorioUsuario;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ public class ServicioUsuario {
     public List<Usuario> listarTodos(){
         return repoUsuario.findAll();
     }
+
     //MODIFICAR USUARIO POR ID
 
     public void modificar(Long id, Usuario usuarioActual){

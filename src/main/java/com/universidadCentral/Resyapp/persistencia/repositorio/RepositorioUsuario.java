@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 
 public interface RepositorioUsuario extends JpaRepository<Usuario, Long> {
     boolean existsByRol(Roles rol);
@@ -15,5 +17,5 @@ public interface RepositorioUsuario extends JpaRepository<Usuario, Long> {
             WHERE UPPER(u.nombre) = UPPER(?1) """)
     Usuario findByNombre(String nombre);
     Usuario findByNombreAndNombreUsuario(String nombre, String nombreUsuario);
-
+    Optional<Usuario> findByNombreUsuario(String nombreUsuario);
 }
