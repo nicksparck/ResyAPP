@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/pedidos")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class ControladorPedidoRest {
     ServicioPedidos serPedido;
 
