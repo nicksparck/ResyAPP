@@ -3,6 +3,7 @@ package com.universidadCentral.Resyapp.persistencia.entidades;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,6 +21,12 @@ public class Pedido {
     private String descripcion;
     private float precio;
     private String imagen;
-    private List<Ingredientes> ingredientesIds;
-
+    // RELACION ENTRE PRODUCTOS Y INGREDIENTES
+    @ManyToMany
+    @JoinTable(
+            name = "producto_ingrediente",
+            joinColumns = @JoinColumn(name = "producto_id"),
+            inverseJoinColumns = @JoinColumn(name = "ingrediente_id")
+    )
+    private List<Ingredientes> ingredientes = new ArrayList<>();
 }

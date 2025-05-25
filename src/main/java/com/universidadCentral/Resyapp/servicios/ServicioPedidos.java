@@ -20,4 +20,12 @@ public class ServicioPedidos {
     public List<Pedido> lista(){
         return repoPedido.findAll();
     }
+    //ELIMINAR
+    public void eliminarPedido(Long id){
+        if(!repoPedido.existsById(id)){
+            System.out.println("Usuario no Encontrado");
+        }
+        repoPedido.deleteById(id);
+
+    }
 }
