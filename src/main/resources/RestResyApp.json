@@ -409,6 +409,46 @@
                 "type": "Request",
                 "method": {
                   "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombreUsuario\": \"UserAdmin\",\n  \"contrasena\": \"Admin123\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/autentificar/validar"
+                },
+                "id": "4061c1e5-4415-4d63-aa38-c31cf1e607a5",
+                "name": "PostAutentificar",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
                   "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
                   "name": "PUT"
                 },
@@ -518,6 +558,119 @@
               }
             }
           ]
+        },
+        {
+          "entity": {
+            "type": "Scenario",
+            "id": "ee3542d1-d96e-4901-8686-902523bef888",
+            "name": "Pedido"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/pedidos/"
+                },
+                "id": "a49cfaae-15f8-4acf-81e0-cf03d69ff428",
+                "name": "GetPedido",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"precio\": 12.0,\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/pedidos/"
+                },
+                "id": "61ae4d40-2836-4f91-85b6-e1a7a6fcc621",
+                "name": "PostPedido",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8863",
+                  "path": "/pedidos/eliminar/2"
+                },
+                "id": "86746d8c-64f0-444b-8a69-274b5002a737",
+                "name": "DeletePedido",
+                "headers": []
+              }
+            }
+          ]
         }
       ]
     },
@@ -528,6 +681,122 @@
         "name": "Render"
       },
       "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "1cf264d0-0417-4811-b38e-7e7d98a25cce",
+            "name": "Pedido"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/pedidos/eliminar/2"
+                },
+                "id": "18c11bee-887c-491b-89f7-3eeeffc8b50f",
+                "name": "DeletePedido",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/pedidos/"
+                },
+                "id": "646d10e6-ec38-4be2-8d52-0ba165f6ddb6",
+                "name": "GetPedido",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion\",\n  \"precio\": 12.0,\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "resyapp-m4ap.onrender.com",
+                  "path": "/pedidos/"
+                },
+                "id": "88480f21-6c5e-4de1-90ec-44bd1d47af75",
+                "name": "PostPedido",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        },
         {
           "entity": {
             "type": "Service",
@@ -657,7 +926,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion Modificada\",\n  \"imagen\": \"jjjj\",\n  \"ingredientesIds\": [1, 2]\n}"
+                  "textBody": "{\n  \"nombre\": \"Hamburguesa Especial\",\n  \"descripcion\" :\"esta es una descripcion Modificada\",\n  \"imagen\": \"jsssjjj\",\n  \"precio\": 22.3,\n  \"ingredientesIds\": [1, 2]\n}"
                 },
                 "uri": {
                   "query": {
